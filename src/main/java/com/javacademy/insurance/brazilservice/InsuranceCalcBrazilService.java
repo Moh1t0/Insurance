@@ -2,13 +2,11 @@ package com.javacademy.insurance.brazilservice;
 
 import com.javacademy.insurance.enums.TypeOfInsurance;
 import com.javacademy.insurance.interfaces.InsuranceCalcService;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
 @Component
-@Profile("BrazilCalc")
 public class InsuranceCalcBrazilService implements InsuranceCalcService {
 
     private final BrazilInsuranceProperty brazilInsuranceProperty;

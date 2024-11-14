@@ -2,13 +2,10 @@ package com.javacademy.insurance.japanservice;
 
 import com.javacademy.insurance.enums.TypeOfInsurance;
 import com.javacademy.insurance.interfaces.InsuranceCalcService;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
-
 import java.math.BigDecimal;
 
 @Component
-@Profile("JapanCalc")
 public class InsuranceCalcJapanService implements InsuranceCalcService {
 
    private final JapanInsuranceProperty japanInsuranceProperty;
