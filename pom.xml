@@ -70,7 +70,7 @@
 						<id>validate</id>
 						<phase>validate</phase>
 						<configuration>
-							<configLocation>google_checks.xml</configLocation>
+							<configLocation>my_check_style.xml</configLocation>
 							<consoleOutput>true</consoleOutput>
 							<failsOnError>true</failsOnError>
 						</configuration>
