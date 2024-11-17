@@ -2,7 +2,6 @@ package com.javacademy.insurance.japanservice;
 
 import com.javacademy.insurance.service.Archive;
 import com.javacademy.insurance.service.ContractNumberGenerator;
-import com.javacademy.insurance.service.FullName;
 import com.javacademy.insurance.service.InsuranceContract;
 import com.javacademy.insurance.enums.ContractStatus;
 import com.javacademy.insurance.enums.Country;
@@ -21,16 +20,19 @@ public class InsuranceServiceJapan implements InsuranceService {
 
     private final InsuranceCalcJapanService insuranceCalcJapanService;
     private final Archive archive;
+    private final ContractNumberGenerator contractNumberGenerator;
 
-    public InsuranceServiceJapan(InsuranceCalcJapanService insuranceCalcJapanService, Archive archive) {
+    public InsuranceServiceJapan(InsuranceCalcJapanService insuranceCalcJapanService,
+                                 Archive archive, ContractNumberGenerator contractNumberGenerator) {
         this.insuranceCalcJapanService = insuranceCalcJapanService;
         this.archive = archive;
+        this.contractNumberGenerator = contractNumberGenerator;
     }
 
     @Override
-    public InsuranceContract offerInsurance(BigDecimal costOfCoverage, FullName fullname,
+    public InsuranceContract offerInsurance(BigDecimal costOfCoverage, String fullname,
                                             TypeOfInsurance typeOfInsurance) {
-        String number = ContractNumberGenerator.generateContractNumber();
+        String number = contractNumberGenerator.generateContractNumber();
         BigDecimal insuranceCost = insuranceCalcJapanService.calculateInsuranceCost(costOfCoverage, typeOfInsurance);
 
         InsuranceContract contract = new InsuranceContract(number, insuranceCost, costOfCoverage,

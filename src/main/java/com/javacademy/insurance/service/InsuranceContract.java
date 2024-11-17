@@ -19,13 +19,13 @@ public class InsuranceContract {
      BigDecimal price; //Стоимость страховки
      BigDecimal costOfCoverage; //Сумма покрытия
      Currency currency;
-     FullName fullName;
+     String fullName;
      Country country;
      TypeOfInsurance typeOfInsurance;
      ContractStatus contractStatus;
 
      public InsuranceContract(String number, BigDecimal price, BigDecimal costOfCoverage,
-                              Currency currency, FullName fullName, Country country,
+                              Currency currency, String fullName, Country country,
                               TypeOfInsurance typeOfInsurance, ContractStatus contractStatus) {
           this.number = number;
           this.price = price;
