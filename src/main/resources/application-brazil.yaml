@@ -1,7 +1,6 @@
 insurance:
-  brazil:
-    currency: "BRL"
-    robberyCoefficient: 0.05
-    medicalCoefficient: 0.03
-    robberyBase: 300
-    medicalBase: 800
+  currency: "BRL"
+  robberyCoefficient: 0.05
+  medicalCoefficient: 0.03
+  robberyBase: 300
+  medicalBase: 800

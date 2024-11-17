@@ -10,10 +10,13 @@ import com.javacademy.insurance.enums.Currency;
 import com.javacademy.insurance.enums.TypeOfInsurance;
 import com.javacademy.insurance.exceptions.ContractNotFoundException;
 import com.javacademy.insurance.interfaces.InsuranceService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 import java.math.BigDecimal;
 
 @Component
+@Profile("japan")
+
 public class InsuranceServiceJapan implements InsuranceService {
 
     private final InsuranceCalcJapanService insuranceCalcJapanService;

@@ -1,7 +1,6 @@
 insurance:
-  japan:
-    currency: "JPY"
-    robberyCoefficient: 0.01
-    medicalCoefficient: 0.015
-    robberyBase: 10000
-    medicalBase: 12000
+  currency: "JPY"
+  robberyCoefficient: 0.01
+  medicalCoefficient: 0.015
+  robberyBase: 10000
+  medicalBase: 12000
