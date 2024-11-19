@@ -4,23 +4,25 @@ import com.javacademy.insurance.enums.ContractStatus;
 import com.javacademy.insurance.enums.Country;
 import com.javacademy.insurance.enums.Currency;
 import com.javacademy.insurance.enums.TypeOfInsurance;
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import java.math.BigDecimal;
 
 @Slf4j
-@Data
-@AllArgsConstructor
+@RequiredArgsConstructor
+@Getter
+@Setter
 public class InsuranceContract {
 
-    private String number; //Номер договора
-    private BigDecimal price; //Стоимость страховки
-    private BigDecimal costOfCoverage; //Сумма покрытия
-    private Currency currency;
-    private String fullName;
-    private Country country;
-    private TypeOfInsurance typeOfInsurance;
-    private ContractStatus contractStatus;
+    private final String number; //Номер договора
+    private final BigDecimal price; //Стоимость страховки
+    private final BigDecimal costOfCoverage; //Сумма покрытия
+    private final Currency currency;
+    private final String fullName;
+    private final Country country;
+    private final TypeOfInsurance typeOfInsurance;
+    private ContractStatus contractStatus = ContractStatus.UNPAID;
 }
 

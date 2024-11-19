@@ -1,6 +1,5 @@
-package com.javacademy.insurance.interfaces;
+package com.javacademy.insurance.service;
 
-import com.javacademy.insurance.service.InsuranceContract;
 import com.javacademy.insurance.enums.TypeOfInsurance;
 import com.javacademy.insurance.exceptions.ContractNotFoundException;
 

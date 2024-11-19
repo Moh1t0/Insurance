@@ -1,7 +1,6 @@
-package com.javacademy.insurance.interfaces;
+package com.javacademy.insurance.service;
 
 import com.javacademy.insurance.enums.TypeOfInsurance;
-
 import java.math.BigDecimal;
 
 @FunctionalInterface

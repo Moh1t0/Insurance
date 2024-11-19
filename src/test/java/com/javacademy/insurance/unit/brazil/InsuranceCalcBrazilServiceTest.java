@@ -1,21 +1,18 @@
-package com.javacademy.insurance.it.brazil;
+package com.javacademy.insurance.unit.brazil;
 
-import com.javacademy.insurance.brazilservice.BrazilInsuranceProperty;
-import com.javacademy.insurance.brazilservice.InsuranceCalcBrazilService;
+import com.javacademy.insurance.service.brazil.InsuranceCalcBrazilService;
 import com.javacademy.insurance.enums.TypeOfInsurance;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 
 import java.math.BigDecimal;
 
 @SpringBootTest
 @ActiveProfiles({"brazil"})
-@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 public class InsuranceCalcBrazilServiceTest {
 
     private static final BigDecimal COVERAGE_AMOUNT_OF_ROBBERY = BigDecimal.valueOf(50_000);
@@ -25,8 +22,6 @@ public class InsuranceCalcBrazilServiceTest {
 
     @Autowired
     private InsuranceCalcBrazilService insuranceCalcBrazilService;
-    @Autowired
-    private BrazilInsuranceProperty brazilInsuranceProperty;
 
     @Test
     @DisplayName("Рассчитать стоимость страховки при грабеже")

@@ -1,7 +1,8 @@
-package com.javacademy.insurance.brazilservice;
+package com.javacademy.insurance.service.brazil;
 
 import com.javacademy.insurance.enums.TypeOfInsurance;
-import com.javacademy.insurance.interfaces.InsuranceCalcService;
+import com.javacademy.insurance.service.InsuranceCalcService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
@@ -10,13 +11,9 @@ import java.math.BigDecimal;
 @Component
 @Profile("brazil")
 @EnableConfigurationProperties(value = BrazilInsuranceProperty.class)
+@RequiredArgsConstructor
 public class InsuranceCalcBrazilService implements InsuranceCalcService {
-
     private final BrazilInsuranceProperty brazilInsuranceProperty;
-
-    public InsuranceCalcBrazilService(BrazilInsuranceProperty brazilInsuranceProperty) {
-        this.brazilInsuranceProperty = brazilInsuranceProperty;
-    }
 
     @Override
     public BigDecimal calculateInsuranceCost(BigDecimal costOfCoverage, TypeOfInsurance typeOfInsurance) {

@@ -1,4 +1,4 @@
-package com.javacademy.insurance.brazilservice;
+package com.javacademy.insurance.service.brazil;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

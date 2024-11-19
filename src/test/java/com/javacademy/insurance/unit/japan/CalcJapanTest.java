@@ -1,21 +1,18 @@
-package com.javacademy.insurance.it.japan;
+package com.javacademy.insurance.unit.japan;
 
 import com.javacademy.insurance.enums.TypeOfInsurance;
-import com.javacademy.insurance.japanservice.InsuranceCalcJapanService;
-import com.javacademy.insurance.japanservice.JapanInsuranceProperty;
+import com.javacademy.insurance.service.japan.InsuranceCalcJapanService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 
 import java.math.BigDecimal;
 
 @SpringBootTest
 @ActiveProfiles({"japan"})
-@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 public class CalcJapanTest {
 
     private static final BigDecimal COVERAGE_AMOUNT_OF_ROBBERY = BigDecimal.valueOf(1_000_000);
@@ -25,8 +22,6 @@ public class CalcJapanTest {
 
     @Autowired
     private InsuranceCalcJapanService insuranceCalcJapanService;
-    @Autowired
-    private JapanInsuranceProperty japanInsuranceProperty;
 
     @Test
     @DisplayName("Рассчитать стоимость страховки при грабеже")
@@ -47,7 +42,6 @@ public class CalcJapanTest {
                 .calculateInsuranceCost(COVERAGE_AMOUNT_OF_MEDICAL, TypeOfInsurance.MEDICAL_INSURANCE);
         BigDecimal expected = EXPECTED_OF_MEDICAL;
         int exp = expected.compareTo(insuranceCost);
-
         Assertions.assertEquals(0, exp);
     }
 

@@ -1,7 +1,7 @@
-package com.javacademy.insurance.japanservice;
+package com.javacademy.insurance.service.japan;
 
 import com.javacademy.insurance.enums.TypeOfInsurance;
-import com.javacademy.insurance.interfaces.InsuranceCalcService;
+import com.javacademy.insurance.service.InsuranceCalcService;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;

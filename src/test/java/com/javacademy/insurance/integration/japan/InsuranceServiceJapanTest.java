@@ -1,13 +1,12 @@
-package com.javacademy.insurance.it.japan;
+package com.javacademy.insurance.integration.japan;
 
 import com.javacademy.insurance.enums.ContractStatus;
 import com.javacademy.insurance.enums.Country;
 import com.javacademy.insurance.enums.Currency;
 import com.javacademy.insurance.enums.TypeOfInsurance;
 import com.javacademy.insurance.exceptions.ContractNotFoundException;
-import com.javacademy.insurance.japanservice.InsuranceCalcJapanService;
-import com.javacademy.insurance.japanservice.InsuranceServiceJapan;
-import com.javacademy.insurance.japanservice.JapanInsuranceProperty;
+import com.javacademy.insurance.service.japan.InsuranceCalcJapanService;
+import com.javacademy.insurance.service.japan.InsuranceServiceJapan;
 import com.javacademy.insurance.service.Archive;
 import com.javacademy.insurance.service.ContractNumberGenerator;
 import com.javacademy.insurance.service.InsuranceContract;
@@ -18,7 +17,6 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 
 import java.math.BigDecimal;
@@ -26,7 +24,6 @@ import java.util.Map;
 
 @SpringBootTest
 @ActiveProfiles({"japan"})
-@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 public class InsuranceServiceJapanTest {
 
     private static final BigDecimal COVERAGE_AMOUNT_OF_ROBBERY = BigDecimal.valueOf(1_000_000);
@@ -36,8 +33,6 @@ public class InsuranceServiceJapanTest {
 
     @Autowired
     InsuranceServiceJapan insuranceServiceJapan;
-    @Autowired
-    JapanInsuranceProperty japanInsuranceProperty;
     @MockBean
     InsuranceCalcJapanService insuranceCalcJapanService;
     @MockBean
